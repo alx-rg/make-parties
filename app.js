@@ -13,6 +13,18 @@ app.get('/', (req, res) => {
   res.render('home', { msg: 'Handlebars are Cool'});
 })
 
+// OUR MOCK ARRAY OF PROJECTS
+var events = [
+  { title: "I am your first event", desc: "A great event that is super fun to look at and good", imgUrl: "https://source.unsplash.com/random" },
+  { title: "I am your second event", desc: "A great event that is super fun to look at and good", imgUrl: "https://source.unsplash.com/random" },
+  { title: "I am your third event", desc: "A great event that is super fun to look at and good", imgUrl: "https://source.unsplash.com/random" }
+]
+
+// INDEX
+app.get('/events', (req, res) => {
+  res.render('events-index', { events: events });
+})
+
 // port
 const port = process.env.PORT || 3000;
 
